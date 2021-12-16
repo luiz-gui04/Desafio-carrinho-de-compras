@@ -88,9 +88,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         updatedCart.splice(productIndex, 1);
         setCart(updatedCart);
        
+      } else {
+        throw Error()
       }
     } catch {
-      throw Error()
+      toast.error('Erro na remoção do produto');
     }
   };
 
